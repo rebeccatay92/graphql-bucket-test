@@ -9,10 +9,11 @@ const config = require('../config/config.json')['development']
 var sequelize = new Sequelize(config.database, config.username, config.password, config)
 
 var db = {
-  // User: sequelize.import('user')
+  User: sequelize.import('user'),
+  Country: sequelize.import('country')
 }
 
-// console.log(db)
+console.log(db)
 
 Object.keys(db).forEach(function (modelName) {
   if (db[modelName].associate) {

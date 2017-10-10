@@ -1,7 +1,7 @@
 'use strict'
 module.exports = {
   up: function (queryInterface, Sequelize) {
-    return queryInterface.createTable('users', {
+    return queryInterface.createTable('itineraries', {
       id: {
         allowNull: false,
         autoIncrement: true,
@@ -12,20 +12,17 @@ module.exports = {
         allowNull: false,
         type: Sequelize.STRING
       },
-      email: {
-        allowNull: false,
-        type: Sequelize.STRING
+      startDate: {
+        type: Sequelize.DATE
       },
-      password: {
-        allowNull: false,
-        type: Sequelize.STRING
+      endDate: {
+        type: Sequelize.DATE
       },
-      profilePic: {
-        type: Sequelize.STRING
-      },
-      countryId: {
-        allowNull: false,
+      pax: {
         type: Sequelize.INTEGER
+      },
+      travelInsurance: {
+        type: Sequelize.STRING
       },
       createdAt: {
         allowNull: false,
@@ -38,6 +35,6 @@ module.exports = {
     })
   },
   down: function (queryInterface, Sequelize) {
-    return queryInterface.dropTable('users')
+    return queryInterface.dropTable('itineraries')
   }
 }
