@@ -1,6 +1,6 @@
 'use strict'
 module.exports = function (sequelize, DataTypes) {
-  var Activity = sequelize.define('activity', {
+  var Food = sequelize.define('food', {
     name: DataTypes.STRING,
     notes: DataTypes.TEXT,
     startDate: DataTypes.DATE,
@@ -10,7 +10,8 @@ module.exports = function (sequelize, DataTypes) {
     bookingStatus: DataTypes.BOOLEAN,
     bookedThrough: DataTypes.STRING,
     bookingConfirmation: DataTypes.STRING,
-    attachment: DataTypes.STRING
+    attachment: DataTypes.STRING,
+    type: DataTypes.STRING
   }, {
     classMethods: {
       associate: function (models) {
@@ -18,5 +19,5 @@ module.exports = function (sequelize, DataTypes) {
       }
     }
   })
-  return Activity
+  return Food
 }
